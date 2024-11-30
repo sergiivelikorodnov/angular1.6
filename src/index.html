@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS</title>
+    <base href="/" />
+    <link rel="icon" href="assets/favicon.ico" sizes="any" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="./App/home/home.component.css" rel="stylesheet" />
+    <link href="./Core/grid/grid.component.css" rel="stylesheet" />
+    <link href="./Core/dialog/dialog.component.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="page-body">
+    <div class="wrapper">
+      <h1>AngularJS Test</h1>
+      <div ng-include="'App/home/home.component.html'"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/angular-translate@2.18.0/dist/angular-translate.min.js"></script>
+
+    <!-- Core Application Scripts -->
+    <script src="app.js"></script>
+    <script src="App/home/home.component.js"></script>
+    <script src="Core/grid/grid.component.js"></script>
+    <script src="Core/dialog/dialog.component.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<div class="dialog-backdrop" ng-click="$ctrl.closeDialog()"></div>
+
+<div class="dialog-container" ng-style="{ width: $ctrl.width || '400px' }">
+  <div class="dialog-header">
+    <h3>{{ $ctrl.title }}</h3>
+    <button class="close-button" ng-click="$ctrl.closeDialog()">
+      <i class="fa-regular fa-circle-xmark"></i>
+    </button>
+  </div>
+  <div class="dialog-body" ng-transclude></div>
+</div>

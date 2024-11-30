@@ -1,0 +1,62 @@
+.grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid var(--neutral-15); /* 1px border around the entire grid */
+    border-radius: 5px; /* Border radius for the whole grid */
+    overflow: hidden; /* To ensure the content stays within the rounded corners */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  }
+
+  .grid-header,
+  .grid-row {
+    display: flex;
+  }
+
+  .grid-header {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: var(--neutral-10); /* Optional, to differentiate the header */
+  }
+
+  .grid-cell {
+    padding: 8px;
+    text-align: left;
+    border-top: 1px solid var(--neutral-15); /* 1px border between rows */
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent text overflow */
+    white-space: nowrap; /* Prevent text from wrapping */
+    color: var(--neutral-80);
+    padding: 0.5rem 1rem;
+    font-size: var(--s);
+    user-select: none;
+  }
+
+  .grid-header .grid-cell {
+    border-top: none; /* Remove the left border of the first cell */
+    color: var(--neutral-60);
+    font-size: var(--md);
+    padding: 1rem;
+  }
+
+  .grid-cell:first-child {
+    border-left: none; /* Remove the left border of the first cell */
+  }
+
+  .grid-row:nth-child(even) {
+    background-color: var(--neutral-3); /* Alternate row colors */
+  }
+
+  .grid-row:hover {
+    background-color: var(--neutral-5); /* Highlight row on hover */
+  }
+
+  /* Highlight the selected row */
+  .selected-row {
+    background-color: var(--primary-15) !important; /* for selected row */
+  }
+
+  .grid-footer {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }

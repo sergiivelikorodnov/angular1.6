@@ -1,0 +1,34 @@
+<div ng-controller="HomeController as ctrl">
+  <grid-component
+    grid-settings="ctrl.gridSettings"
+    data="ctrl.gridData"
+    on-row-event="ctrl.handleRowEvent($event)"
+  >
+  </grid-component>
+  <dialog-component
+    title="User Details"
+    width="500px"
+    on-close="ctrl.handleDialogClose()"
+    ng-if="ctrl.showDialog"
+  >
+    <div class="user-info-block">
+      <div class="user-avatar"></div>
+      <div class="user-info">
+        <p class="user-name">{{ ctrl.dialogData.userName }}</p>
+        <p class="user-username">{{ ctrl.dialogData.name }}</p>
+        <p class="user-address">San Francisco, California, USA</p>
+      </div>
+    </div>
+    <div class="user-details">
+      <p><span>Phone: </span>+1 800 888 888</p>
+      <p>
+        <span>Email: </span>
+        <a ng-href="mailto:{{ ctrl.dialogData.email }}">+1 800 888 888</a>
+      </p>
+      <p>
+        <span>Website: </span>
+        <a ng-href="https://www.force.com" target="_blank">www.force.com</a>
+      </p>
+    </div>
+  </dialog-component>
+</div>

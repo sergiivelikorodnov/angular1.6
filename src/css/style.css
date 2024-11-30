@@ -1,0 +1,141 @@
+:root {
+  font-size: 14px;
+  --s: 12px;
+  --md: 14px;
+  --xl: 18px;
+  --xxl: 24px;
+  --primary: #0169D9;
+  --primary-lighter: #2C8FFA;
+  --primary-darker: #0054AE;
+  --primary-75: #418FE3;
+  --primary-50: #80B4EC;
+  --primary-25: #BFD9F5;
+  --primary-15: #D9E9F9;
+  --primary-10: #E6F0FC;
+
+  --neutral-100: #00172F;
+  --neutral-80: #334558;
+  --neutral-60: #667482;
+  --neutral-40: #97A1AD;
+  --neutral-20: #C6CED4;
+  --neutral-15: #DBDFE4;
+  --neutral-10: #E8ECF1;
+  --neutral-5: #EFF3F6;
+  --neutral-3: #F7F8F8;
+  --white: #fff;
+
+  --error-20: #F7CFCC;
+  --error: #CB1102;
+  --error-darker: #800A01;
+
+  --warning-20: #F7E7CC;
+  --warning: #D98900;
+  --warning-darker: #925C00;
+
+  --success-20: #D7EFD2;
+  --success: #2A9E10;
+  --success-darker: #1E780A;
+
+}
+
+.page-body {
+    font-family: "Inter", serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    font-weight: 400;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
+    grid-template-rows: min-content 1fr min-content;
+    align-content: start;
+    min-height: 100vh;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto; }
+
+  *,
+  *::before,
+  *::after,
+  html {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+            clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* ----------------------------------------
+            Headings
+     ---------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--neutral-100);
+  font-family: "Inter", serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.25rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 1.875rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 767px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
