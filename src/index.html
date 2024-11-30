@@ -5,14 +5,14 @@
     <title>AngularJS</title>
     <base href="/" />
     <link rel="icon" href="assets/favicon.ico" sizes="any" />
-    <link href="./css/style.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
       rel="stylesheet"
     />
-    <link href="./App/home/home.component.css" rel="stylesheet" />
-    <link href="./Core/grid/grid.component.css" rel="stylesheet" />
-    <link href="./Core/dialog/dialog.component.css" rel="stylesheet" />
+    <link href="App/AppComponents/home/home.component.css" rel="stylesheet" />
+    <link href="Core/grid/grid.component.css" rel="stylesheet" />
+    <link href="Core/dialog/dialog.component.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,7 +24,7 @@
   <body class="page-body">
     <div class="wrapper">
       <h1>AngularJS Test</h1>
-      <div ng-include="'App/home/home.component.html'"></div>
+      <div ng-include="'App/AppComponents/home/home.component.html'"></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -33,7 +33,9 @@
 
     <!-- Core Application Scripts -->
     <script src="app.js"></script>
-    <script src="App/home/home.component.js"></script>
+    <script src="App/Services/userService/user.service.js"></script>
+    <script src="App/app.constants.js"></script>
+    <script src="App/AppComponents/home/home.component.js"></script>
     <script src="Core/grid/grid.component.js"></script>
     <script src="Core/dialog/dialog.component.js"></script>
   </body>

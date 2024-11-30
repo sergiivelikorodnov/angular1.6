@@ -1,7 +1,7 @@
 <div ng-controller="HomeController as ctrl">
   <grid-component
     grid-settings="ctrl.gridSettings"
-    data="ctrl.gridData"
+    data="ctrl.users"
     on-row-event="ctrl.handleRowEvent($event)"
   >
   </grid-component>
@@ -14,7 +14,7 @@
     <div class="user-info-block">
       <div class="user-avatar"></div>
       <div class="user-info">
-        <p class="user-name">{{ ctrl.dialogData.userName }}</p>
+        <p class="user-name">{{ ctrl.dialogData.username }}</p>
         <p class="user-username">{{ ctrl.dialogData.name }}</p>
         <p class="user-address">San Francisco, California, USA</p>
       </div>

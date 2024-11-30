@@ -1,8 +1,26 @@
-app.controller('HomeController', function () {
+app.controller('HomeController', function (UserService) {
   const ctrl = this;
 
   ctrl.showDialog = false;
   ctrl.dialogData = null;
+
+  ctrl.users = [];
+  ctrl.error = null;
+
+  ctrl.$onInit = function () {
+    ctrl.fetchUsers();
+  };
+
+  ctrl.fetchUsers = function () {
+    UserService.getUsers()
+      .then(function (users) {
+        ctrl.users = users;
+      })
+      .catch(function (error) {
+        ctrl.error = 'Failed to load users. Please try again later.';
+        console.error('Error fetching users:', error);
+      });
+  };
 
   ctrl.gridSettings = {
     ComponentName: 'GridName',
@@ -20,10 +38,10 @@ app.controller('HomeController', function () {
         FieldLabel: 'name',
       },
       {
-        FieldName: 'userName',
+        FieldName: 'username',
         FieldType: 'string',
         FieldWidth: 180,
-        FieldLabel: 'userName',
+        FieldLabel: 'username',
       },
       {
         FieldName: 'email',
@@ -34,27 +52,6 @@ app.controller('HomeController', function () {
     ],
   };
 
-  ctrl.gridData = [
-    {
-      id: 1,
-      name: 'Sergii',
-      userName: 'Caesar',
-      email: 'inthe7heaven@gmail.com',
-    },
-    {
-      id: 2,
-      name: 'Sergii2',
-      userName: 'Caesar2',
-      email: 'inthe7heaven2@gmail.com',
-    },
-    {
-      id: 3,
-      name: 'Sergii3',
-      userName: 'Caesar3',
-      email: 'inthe7heaven3@gmail.com',
-    },
-  ];
-
   ctrl.handleRowEvent = function ({ operation, dataItem }) {
     switch (operation) {
       case 'dblClick': {
@@ -62,10 +59,11 @@ app.controller('HomeController', function () {
         ctrl.showDialog = true;
         break;
       }
-      //   case 'cancel': {
-      //     ctrl.handleDialogClose();
-      //     break;
-      //   }
+
+      case 'cancel': {
+        ctrl.handleDialogClose();
+        break;
+      }
     }
   };
 

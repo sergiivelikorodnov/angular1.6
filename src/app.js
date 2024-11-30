@@ -1,11 +1,15 @@
-const app = angular.module('app', ['pascalprecht.translate', 'ngRoute']);
+const app = angular.module('app', [
+  'pascalprecht.translate',
+  'ngRoute',
+  'app.constants',
+]);
 
 // Configure translations
 app.config(function ($translateProvider) {
   $translateProvider.translations('en', {
     userId: 'User ID',
     name: 'Name',
-    userName: 'Username',
+    username: 'Username',
     email: 'Email',
   });
   $translateProvider.preferredLanguage('en');
@@ -16,7 +20,7 @@ app.config(function ($routeProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
   $routeProvider
     .when('/home', {
-      templateUrl: 'App/home/home.component.html',
+      templateUrl: 'App/AppComponents/home/home.component.html',
       controller: 'HomeController',
       controllerAs: 'ctrl',
     })
