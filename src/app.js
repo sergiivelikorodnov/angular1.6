@@ -5,14 +5,18 @@ const app = angular.module('app', [
 ]);
 
 // Configure translations
-app.config(function ($translateProvider) {
-  $translateProvider.translations('en', {
-    userId: 'User ID',
-    name: 'Name',
-    username: 'Username',
-    email: 'Email',
+app.config(function ($translateProvider, $translateSanitizationProvider) {
+  // Define translations
+  $translateProvider.useStaticFilesLoader({
+    prefix: '/i18n/', // Path to translation files
+    suffix: '.json', // File extension
   });
+
+  // Default language
   $translateProvider.preferredLanguage('en');
+
+  // Configure sanitization strategy
+  $translateSanitizationProvider.useStrategy('sanitizeParameters'); // Use 'sanitize' or 'escape' as needed
 });
 
 // Routing
@@ -25,4 +29,15 @@ app.config(function ($routeProvider, $locationProvider) {
       controllerAs: 'ctrl',
     })
     .otherwise({ redirectTo: '/home' });
+});
+
+// Main application controller for language switching
+app.controller('AppController', function ($translate) {
+  const ctrl = this;
+
+  ctrl.langKey = 'en';
+  ctrl.changeLanguage = function (langKey) {
+    $translate.use(langKey);
+    ctrl.langKey = langKey;
+  };
 });

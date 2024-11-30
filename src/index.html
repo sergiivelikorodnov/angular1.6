@@ -10,6 +10,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
       rel="stylesheet"
     />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css"
+      rel="stylesheet"
+    />
     <link href="App/AppComponents/home/home.component.css" rel="stylesheet" />
     <link href="Core/grid/grid.component.css" rel="stylesheet" />
     <link href="Core/dialog/dialog.component.css" rel="stylesheet" />
@@ -23,13 +27,33 @@
 
   <body class="page-body">
     <div class="wrapper">
-      <h1>AngularJS Test</h1>
+      <div class="header">
+        <h1>AngularJS Test</h1>
+        <div ng-controller="AppController as ctrl">
+          <button
+            class="language-button"
+            ng-click="ctrl.changeLanguage('en')"
+            ng-class="{ 'active-language': ctrl.langKey === 'en' }"
+          >
+            <i class="fi fi-gb"></i>
+          </button>
+          <button
+            class="language-button"
+            ng-click="ctrl.changeLanguage('es')"
+            ng-class="{ 'active-language': ctrl.langKey === 'es' }"
+          >
+            <i class="fi fi-es"></i>
+          </button>
+        </div>
+      </div>
       <div ng-include="'App/AppComponents/home/home.component.html'"></div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/angular-translate@2.18.0/dist/angular-translate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate-loader-static-files/2.18.4/angular-translate-loader-static-files.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.6.9/angular-sanitize.min.js"></script>
 
     <!-- Core Application Scripts -->
     <script src="app.js"></script>

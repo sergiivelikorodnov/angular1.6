@@ -139,3 +139,25 @@ h6 {
   padding: 20px;
 }
 
+.language-button{
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.language-button .fi{
+  width: 2.66em;
+  height: 2em;
+}
+
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.active-language{
+  border: 1px solid var(--neutral-40);
+  padding: 0.25rem;
+  border-radius: 5px;
+}
