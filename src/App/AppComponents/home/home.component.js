@@ -1,8 +1,8 @@
-app.controller('HomeController', function (UserService) {
+app.controller('HomeController', function (UserService, $timeout) {
   const ctrl = this;
 
   ctrl.showDialog = false;
-  ctrl.dialogData = null;
+  ctrl.currentUser = null;
 
   ctrl.users = [];
   ctrl.error = null;
@@ -54,8 +54,14 @@ app.controller('HomeController', function (UserService) {
 
   ctrl.handleRowEvent = function ({ operation, dataItem }) {
     switch (operation) {
+      case 'selection': {
+        $timeout(() => {
+          ctrl.currentUser = dataItem;
+        });
+        break;
+      }
       case 'dblClick': {
-        ctrl.dialogData = dataItem;
+        ctrl.currentUser = dataItem;
         ctrl.showDialog = true;
         break;
       }
@@ -69,6 +75,6 @@ app.controller('HomeController', function (UserService) {
 
   ctrl.handleDialogClose = function () {
     ctrl.showDialog = false;
-    ctrl.dialogData = null;
+    ctrl.currentUser = null;
   };
 });

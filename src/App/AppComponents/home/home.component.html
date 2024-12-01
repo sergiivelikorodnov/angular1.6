@@ -2,6 +2,7 @@
   <grid-component
     grid-settings="ctrl.gridSettings"
     data="ctrl.users"
+    selected-item="ctrl.currentUser"
     on-row-event="ctrl.handleRowEvent($event)"
   >
   </grid-component>
@@ -14,20 +15,20 @@
     <div class="user-info-block">
       <div class="user-avatar"></div>
       <div class="user-info">
-        <p class="user-name">{{ ctrl.dialogData.username }}</p>
-        <p class="user-username">{{ ctrl.dialogData.name }}</p>
-        <p class="user-address">San Francisco, California, USA</p>
+        <p class="user-name" ng-if="ctrl.currentUser.name">{{ ctrl.currentUser.name }}</p>
+        <p class="user-username" ng-if="ctrl.currentUser.username"></p>{{ ctrl.currentUser.username }}</p>
+        <p class="user-address" ng-if="ctrl.currentUser.address">{{ ctrl.currentUser.address.street }}, {{ ctrl.currentUser.address.suite}}, <strong>{{ ctrl.currentUser.address.city}}</strong></p>
       </div>
     </div>
     <div class="user-details">
-      <p><span>Phone: </span>+1 800 888 888</p>
+      <p><span>{{'phone' | translate}}: </span>{{ ctrl.currentUser.phone }}</p>
       <p>
-        <span>Email: </span>
-        <a ng-href="mailto:{{ ctrl.dialogData.email }}">+1 800 888 888</a>
+        <span>{{'email' | translate}}: </span>
+        <a ng-href="mailto:{{ ctrl.currentUser.email }}">{{ ctrl.currentUser.email }}</a>
       </p>
       <p>
-        <span>Website: </span>
-        <a ng-href="https://www.force.com" target="_blank">www.force.com</a>
+        <span>{{'website' | translate}}: </span>
+        <a ng-href="http://{{ ctrl.currentUser.website }}" target="_blank">{{ ctrl.currentUser.website }}</a>
       </p>
     </div>
   </dialog-component>

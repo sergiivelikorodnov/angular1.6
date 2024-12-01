@@ -2,6 +2,7 @@ angular.module('app').component('gridComponent', {
   bindings: {
     gridSettings: '<',
     data: '<',
+    selectedItem: '<',
     onRowEvent: '&',
   },
   templateUrl: 'Core/grid/grid.component.html',
@@ -34,6 +35,14 @@ angular.module('app').component('gridComponent', {
 
     ctrl.$onDestroy = function () {
       $document.off('keydown', ctrl.handleKeyDown);
+    };
+
+    ctrl.$onChanges = function (changes) {
+      if (changes?.selectedItem?.currentValue == null) {
+        ctrl.selectedItem = null;
+        ctrl.selectedRowId = null;
+      }
+      console.log('Changes in selectedItem:', changes.selectedItem);
     };
 
     ctrl.handleKeyDown = function (event) {

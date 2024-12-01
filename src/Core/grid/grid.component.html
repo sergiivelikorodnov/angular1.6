@@ -16,7 +16,10 @@
   <div
     class="grid-row"
     ng-repeat="item in $ctrl.data track by item.id"
-    ng-class="{ 'selected-row': $ctrl.selectedRowId === item.id }"
+    ng-class="{
+      'selected-row':
+        $ctrl.selectedRowId !== null && $ctrl.selectedRowId === item.id
+    }"
     ng-click="$ctrl.rowClick(item)"
     ng-dblclick="$ctrl.rowDblClick(item)"
   >

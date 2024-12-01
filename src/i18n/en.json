@@ -2,5 +2,7 @@
     "userId": "User ID",
     "name": "Name",
     "username": "Username",
-    "email": "Email"
+    "email": "Email",
+    "phone": "Phone",
+    "website": "Website"
   }
