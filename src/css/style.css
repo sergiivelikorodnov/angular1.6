@@ -161,3 +161,32 @@ h6 {
   padding: 0.25rem;
   border-radius: 5px;
 }
+
+.button{
+  display: inline-flex;
+  padding: 14px 24px 14px 20px;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  width:fit-content;
+}
+
+.button-big-primary{
+  border-radius: 8px;
+  border: 1px solid var(--primary);
+  background: var(--white);
+  color: var(--primary);
+  font-family: "Inter", serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 20px */
+  letter-spacing: 0.16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-big-primary:hover{
+  border: 1px solid var(--white);
+  background: var(--primary);
+  color: var(--white);
+}

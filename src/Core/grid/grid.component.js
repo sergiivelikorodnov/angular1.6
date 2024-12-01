@@ -42,7 +42,6 @@ angular.module('app').component('gridComponent', {
         ctrl.selectedItem = null;
         ctrl.selectedRowId = null;
       }
-      console.log('Changes in selectedItem:', changes.selectedItem);
     };
 
     ctrl.handleKeyDown = function (event) {

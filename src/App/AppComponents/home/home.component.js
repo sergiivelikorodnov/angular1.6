@@ -2,6 +2,7 @@ app.controller('HomeController', function (UserService, $timeout) {
   const ctrl = this;
 
   ctrl.showDialog = false;
+  ctrl.deleteDialogVisible = false;
   ctrl.currentUser = null;
 
   ctrl.users = [];
@@ -76,5 +77,13 @@ app.controller('HomeController', function (UserService, $timeout) {
   ctrl.handleDialogClose = function () {
     ctrl.showDialog = false;
     ctrl.currentUser = null;
+  };
+
+  ctrl.deleteUser = function () {
+    ctrl.deleteDialogVisible = true;
+  };
+
+  ctrl.handleClose = function () {
+    ctrl.deleteDialogVisible = false;
   };
 });

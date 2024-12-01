@@ -57,3 +57,9 @@
   .user-details span{
     color: var(--neutral-60)
   }
+
+  .dialog-body{
+    display: flex;;
+    flex-direction: column;
+    gap: 20px;
+  }

@@ -8,7 +8,7 @@
   </grid-component>
   <dialog-component
     title="User Details"
-    width="500px"
+    width="550px"
     on-close="ctrl.handleDialogClose()"
     ng-if="ctrl.showDialog"
   >
@@ -31,5 +31,14 @@
         <a ng-href="http://{{ ctrl.currentUser.website }}" target="_blank">{{ ctrl.currentUser.website }}</a>
       </p>
     </div>
+    <button ng-click="ctrl.deleteUser()" class="button button-big-primary" style="align-self: self-end;"><i class="fa-regular fa-trash-can"></i>Delete</button>
   </dialog-component>
+  <message-component
+    ng-if="ctrl.deleteDialogVisible"
+    mode="delete"
+    title="Delete Item"
+    text="This action cannot be undone. Do you want to delete this item?"
+    on-confirm="ctrl.handleDelete()"
+    on-close="ctrl.handleClose()"
+></message-component>
 </div>
