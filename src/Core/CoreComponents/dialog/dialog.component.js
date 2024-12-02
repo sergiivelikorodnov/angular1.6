@@ -5,7 +5,7 @@ angular.module('app').component('dialogComponent', {
     onClose: '&', // Callback for the close action
   },
   transclude: true, // Enables content projection
-  templateUrl: 'Core/dialog/dialog.component.html', // Use templateUrl for external files
+  templateUrl: 'Core/CoreComponents/dialog/dialog.component.html', // Use templateUrl for external files
   controller: function ($document, $timeout) {
     var ctrl = this;
 

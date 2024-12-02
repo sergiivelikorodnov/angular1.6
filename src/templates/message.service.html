@@ -1,0 +1,21 @@
+<div class="message-container" ng-style="{ width: options.width || '400px' }">
+  <div class="message-header">
+    <h3 ng-if="options.title">{{ options.title }}</h3>
+    <button class="close-button" ng-click="close()">
+      <i class="fa-regular fa-circle-xmark"></i>
+    </button>
+  </div>
+  <div class="message-body" ng-if="options.text">{{ options.text }}</div>
+  <div class="message-footer">
+    <button ng-if="options.mode === 'question'" ng-click="confirm()">
+      Yes
+    </button>
+    <button ng-if="options.mode === 'question'" ng-click="close()">No</button>
+    <button ng-if="options.mode === 'delete'" ng-click="confirm()">
+      Delete
+    </button>
+    <button ng-if="options.mode === 'delete'" ng-click="close()">Cancel</button>
+    <button ng-if="options.mode === 'notice'" ng-click="close()">Ok</button>
+  </div>
+</div>
+<div class="message-backdrop" ng-click="close()"></div>

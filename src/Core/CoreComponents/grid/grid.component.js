@@ -5,7 +5,7 @@ angular.module('app').component('gridComponent', {
     selectedItem: '<',
     onRowEvent: '&',
   },
-  templateUrl: 'Core/grid/grid.component.html',
+  templateUrl: 'Core/CoreComponents/grid/grid.component.html',
   controller: function ($document, $scope) {
     // Inject $scope
     const ctrl = this;

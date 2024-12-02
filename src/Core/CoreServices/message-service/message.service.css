@@ -1,14 +1,14 @@
-.dialog-backdrop {
+.message-backdrop {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  }
+    z-index: 1001;
+}
 
-  .dialog-container {
+.message-container {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -17,30 +17,30 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
     border-radius: 8px;
     overflow: hidden;
-    z-index: 1000;
-  }
+    z-index: 1002;
+}
 
-  .dialog-header {
+.message-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5em;
     border-bottom: 1px solid var(--neutral-20);
     color: var(--neutral-100);
-  }
+}
 
-  .dialog-header h3 {
+.message-header h3 {
     margin: 0;
-  }
+}
 
-  .close-button {
+.close-button {
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--neutral-100);
-  }
+}
 
-  .dialog-body {
+.message-body {
     padding: 1.5em;
-  }
+}
