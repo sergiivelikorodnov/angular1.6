@@ -81,15 +81,11 @@ app.controller(
       ctrl.currentUser = null;
     };
 
-    // ctrl.deleteUser = function () {
-    //   ctrl.deleteDialogVisible = true;
-    // };
-
     ctrl.deleteUser = function () {
       MessageService.showMessage({
         mode: 'delete',
-        title: 'Delete User',
-        text: 'Are you sure you want to delete this user?',
+        title: 'Are you sure you want to delete user?',
+        text: 'This action cannot be undone. Your user will be permanently deleted',
         onConfirm: function () {
           console.log('User deleted');
         },

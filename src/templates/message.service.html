@@ -1,21 +1,66 @@
 <div class="message-container" ng-style="{ width: options.width || '400px' }">
   <div class="message-header">
-    <h3 ng-if="options.title">{{ options.title }}</h3>
     <button class="close-button" ng-click="close()">
       <i class="fa-regular fa-circle-xmark"></i>
     </button>
   </div>
-  <div class="message-body" ng-if="options.text">{{ options.text }}</div>
+  <div class="message-body" ng-if="options.text">
+    <i
+      ng-if="options.mode === 'delete'"
+      class="fa-solid fa-triangle-exclamation warn-icon"
+    ></i>
+    <i
+      ng-if="options.mode === 'notice'"
+      class="fa-solid fa-circle-check notice-icon"
+    ></i>
+    <i
+      ng-if="options.mode === 'question'"
+      class="fa-solid fa-circle-question ask-icon"
+    ></i>
+    <h4><strong>{{ options.title }}</strong></h4>
+    <p class="message-text">{{ options.text }}</p>
+  </div>
   <div class="message-footer">
-    <button ng-if="options.mode === 'question'" ng-click="confirm()">
+    <button
+      class="button button-big button-big-white"
+      ng-if="options.mode === 'question'"
+      ng-click="confirm()"
+    >
+      <i class="fa-regular fa-circle-check"></i>
       Yes
     </button>
-    <button ng-if="options.mode === 'question'" ng-click="close()">No</button>
-    <button ng-if="options.mode === 'delete'" ng-click="confirm()">
+    <button
+      class="button button-big button-big-primary"
+      ng-if="options.mode === 'question'"
+      ng-click="close()"
+    >
+      <i class="fa-regular fa-circle-xmark"></i>
+      No
+    </button>
+    <button
+      class="button button-big button-big-white"
+      ng-if="options.mode === 'delete'"
+      ng-click="confirm()"
+    >
+      <i class="fa-regular fa-trash-can"></i>
       Delete
     </button>
-    <button ng-if="options.mode === 'delete'" ng-click="close()">Cancel</button>
-    <button ng-if="options.mode === 'notice'" ng-click="close()">Ok</button>
+    <button
+      class="button button-big button-big-primary"
+      ng-if="options.mode === 'delete'"
+      ng-click="close()"
+    >
+      <i class="fa-regular fa-circle-xmark"></i>
+      Cancel
+    </button>
+    <button
+      class="button button-big button-big-primary"
+      ng-if="options.mode === 'notice'"
+      ng-click="close()"
+    >
+      <i class="fa-regular fa-circle-check"></i>
+      Ok
+    </button>
   </div>
 </div>
 <div class="message-backdrop" ng-click="close()"></div>

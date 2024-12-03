@@ -31,7 +31,19 @@ angular
           scope.close = function () {
             element.remove();
             scope.$destroy();
+            $document.off('keydown', onKeyDown); // Remove keydown listener
           };
+
+          // Keydown handler for Esc key
+          function onKeyDown(event) {
+            if (event.key === 'Escape' || event.keyCode === 27) {
+              scope.close();
+              scope.$apply(); // Ensure Angular processes the change
+            }
+          }
+
+          // Attach keydown event listener to the document
+          $document.on('keydown', onKeyDown);
         });
       };
     }

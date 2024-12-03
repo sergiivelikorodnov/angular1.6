@@ -22,25 +22,58 @@
 
 .message-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
     padding: 1.5em;
-    border-bottom: 1px solid var(--neutral-20);
     color: var(--neutral-100);
-}
-
-.message-header h3 {
-    margin: 0;
 }
 
 .close-button {
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.5rem 1.5rem 0 1.5rem;
     cursor: pointer;
     color: var(--neutral-100);
 }
 
 .message-body {
-    padding: 1.5em;
+    padding: 0 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.message-body h4, .message-body p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.message-text {
+    font-size: var(--l);
+}
+
+.message-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.warn-icon {
+    font-size: 82px;
+    color: var(--warning);
+}
+
+.ask-icon {
+    font-size: 82px;
+    color: var(--success);
+}
+
+.notice-icon {
+    font-size: 82px;
+    color: var(--primary-darker);
 }
