@@ -68,6 +68,7 @@ app.controller(
           });
           break;
         }
+        case 'longPress':
         case 'dblClick': {
           ctrl.currentUser = dataItem;
           ctrl.showDialog = true;

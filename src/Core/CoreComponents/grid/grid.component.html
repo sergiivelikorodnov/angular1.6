@@ -36,6 +36,8 @@
       }"
       ng-click="$ctrl.rowClick(item)"
       ng-dblclick="$ctrl.rowDblClick(item)"
+      on-long-press="$ctrl.rowLongPress(item)"
+      press-duration="700"
     >
       <div
         class="grid-cell"

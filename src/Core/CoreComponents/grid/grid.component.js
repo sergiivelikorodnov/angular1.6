@@ -74,5 +74,13 @@ angular.module('app').component('gridComponent', {
         $event: { operation: 'dblClick', dataItem: item },
       });
     };
+
+    // Long press handler
+    ctrl.rowLongPress = function (item) {
+      console.log('It was LongPress:', item);
+      ctrl.onRowEvent({
+        $event: { operation: 'longPress', dataItem: item },
+      });
+    };
   },
 });
