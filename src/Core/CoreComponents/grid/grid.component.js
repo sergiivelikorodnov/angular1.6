@@ -30,6 +30,10 @@ angular.module('app').component('gridComponent', {
         field.FieldWidth = field.FieldWidth || 150;
       });
 
+      ctrl.gridHeightStyle = ctrl.gridSettings.GridHeight
+        ? { '--grid-height': `${ctrl.gridSettings.GridHeight}px` }
+        : { '--grid-height': '100%' }; // Apply 100% height when GridHeight is undefined
+
       $document.on('keydown', ctrl.handleKeyDown);
     };
 

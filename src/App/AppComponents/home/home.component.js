@@ -1,6 +1,6 @@
 app.controller(
   'HomeController',
-  function (UserService, MessageService, $timeout) {
+  function (UserService, MessageService, LoadingService, $timeout, $translate) {
     const ctrl = this;
 
     ctrl.showDialog = false;
@@ -15,18 +15,23 @@ app.controller(
     };
 
     ctrl.fetchUsers = function () {
+      // Show the loader
+      LoadingService.isBusyYes();
       UserService.getUsers()
         .then(function (users) {
           ctrl.users = users;
+          LoadingService.isBusyNo();
         })
         .catch(function (error) {
           ctrl.error = 'Failed to load users. Please try again later.';
           console.error('Error fetching users:', error);
+          LoadingService.isBusyNo();
         });
     };
 
     ctrl.gridSettings = {
       ComponentName: 'GridName',
+      GridHeight: 400,
       Fields: [
         {
           FieldName: 'id',
@@ -82,13 +87,17 @@ app.controller(
     };
 
     ctrl.deleteUser = function () {
-      MessageService.showMessage({
-        mode: 'delete',
-        title: 'Are you sure you want to delete user?',
-        text: 'This action cannot be undone. Your user will be permanently deleted',
-        onConfirm: function () {
-          console.log('User deleted');
-        },
+      $translate(['deleteUserTitle', 'deleteUserText']).then(function (
+        translations
+      ) {
+        MessageService.showMessage({
+          mode: 'delete',
+          title: translations.deleteUserTitle,
+          text: translations.deleteUserText,
+          onConfirm: function () {
+            console.log('User deleted');
+          },
+        });
       });
     };
     ctrl.handleClose = function () {

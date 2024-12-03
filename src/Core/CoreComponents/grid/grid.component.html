@@ -1,4 +1,7 @@
-<div class="grid">
+<div
+  class="grid"
+  ng-style="{ 'max-height': $ctrl.gridSettings.GridHeight + 'px' }"
+>
   <!-- Table Header -->
   <div class="grid-header">
     <div
@@ -14,23 +17,42 @@
 
   <!-- Table Body -->
   <div
-    class="grid-row"
-    ng-repeat="item in $ctrl.data track by item.id"
-    ng-class="{
-      'selected-row':
-        $ctrl.selectedRowId !== null && $ctrl.selectedRowId === item.id
+    class="grid-body"
+    ng-style="{
+      'max-height': $ctrl.gridSettings.GridHeight - 50 + 'px',
+      'overflow-y': 'auto'
     }"
-    ng-click="$ctrl.rowClick(item)"
-    ng-dblclick="$ctrl.rowDblClick(item)"
   >
-    <div
-      class="grid-cell"
-      ng-repeat="field in $ctrl.gridSettings.Fields"
-      ng-style="{
-        width: $ctrl.getProportionalWidth(field.FieldWidth) + '%'
-      }"
-    >
-      {{ item[field.FieldName] }}
+    <div class="grid-row" ng-if="$ctrl.data.length == 0">
+      <p class="no-data">{{ 'noData' | translate }}</p>
     </div>
+    <div
+      class="grid-row"
+      ng-if="$ctrl.data.length !== 0"
+      ng-repeat="item in $ctrl.data track by item.id"
+      ng-class="{
+        'selected-row':
+          $ctrl.selectedRowId !== null && $ctrl.selectedRowId === item.id
+      }"
+      ng-click="$ctrl.rowClick(item)"
+      ng-dblclick="$ctrl.rowDblClick(item)"
+    >
+      <div
+        class="grid-cell"
+        ng-repeat="field in $ctrl.gridSettings.Fields"
+        ng-style="{
+          width: $ctrl.getProportionalWidth(field.FieldWidth) + '%'
+        }"
+      >
+        {{ item[field.FieldName] }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Table Footer -->
+  <div class="grid-footer">
+    <p ng-if="$ctrl.data.length !== 0" class="loaded-items">
+      {{ 'shown' | translate }} 1 - {{ $ctrl.data.length }}
+    </p>
   </div>
 </div>

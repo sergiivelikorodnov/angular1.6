@@ -4,5 +4,16 @@
     "username": "Nombre de Usuario",
     "email": "Correo Electrónico",
     "phone": "Teléfono",
-    "Website": "Sitio web"
+    "website": "Sitio web",
+    "loading": "Cargando...",
+    "userDetails": "Datos del usuario",
+    "delete": "Borrar",
+    "cancel": "Cancelar",
+    "ok": "Ok",
+    "yes": "Sí",
+    "no": "No",
+    "shown": "Mostrada:",
+    "deleteUserTitle": "¿Está seguro que desea eliminar el usuario?",
+    "deleteUserText": "Esta acción no se puede deshacer. Tu usuario será eliminado de forma permanente.",
+    "noData": "No se encontraron datos"
   }

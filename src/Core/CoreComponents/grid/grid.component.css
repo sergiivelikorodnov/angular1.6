@@ -1,62 +1,137 @@
 .grid {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border: 1px solid var(--neutral-15); /* 1px border around the entire grid */
-    border-radius: 5px; /* Border radius for the whole grid */
-    overflow: hidden; /* To ensure the content stays within the rounded corners */
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
-  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--neutral-15);
+  /* 1px border around the entire grid */
+  border-radius: 5px;
+  /* Border radius for the whole grid */
+  overflow: hidden;
+  /* To ensure the content stays within the rounded corners */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
 
-  .grid-header,
-  .grid-row {
-    display: flex;
-  }
+.grid-header,
+.grid-row {
+  display: flex;
+}
 
-  .grid-header {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    background-color: var(--neutral-10); /* Optional, to differentiate the header */
-  }
+.grid-header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: var(--neutral-10);
+  /* Optional, to differentiate the header */
+}
 
-  .grid-cell {
-    padding: 8px;
-    text-align: left;
-    border-top: 1px solid var(--neutral-15); /* 1px border between rows */
-    box-sizing: border-box;
-    overflow: hidden; /* Prevent text overflow */
-    white-space: nowrap; /* Prevent text from wrapping */
-    color: var(--neutral-80);
-    padding: 0.5rem 1rem;
-    font-size: var(--s);
-    user-select: none;
-  }
+.grid-cell {
+  padding: 8px;
+  text-align: left;
+  border-top: 1px solid var(--neutral-15);
+  /* 1px border between rows */
+  box-sizing: border-box;
+  overflow: hidden;
+  /* Prevent text overflow */
+  white-space: nowrap;
+  /* Prevent text from wrapping */
+  color: var(--neutral-80);
+  padding: 0.5rem 1rem;
+  font-size: var(--s);
+  user-select: none;
+}
 
-  .grid-header .grid-cell {
-    border-top: none; /* Remove the left border of the first cell */
-    color: var(--neutral-60);
-    font-size: var(--md);
-    padding: 1rem;
-  }
+.grid-header .grid-cell {
+  border-top: none;
+  /* Remove the left border of the first cell */
+  color: var(--neutral-60);
+  font-size: var(--md);
+  padding: 1rem;
+}
 
-  .grid-cell:first-child {
-    border-left: none; /* Remove the left border of the first cell */
-  }
+.grid-cell:first-child {
+  border-left: none;
+  /* Remove the left border of the first cell */
+}
 
-  .grid-row:nth-child(even) {
-    background-color: var(--neutral-3); /* Alternate row colors */
-  }
+.grid-row:nth-child(even) {
+  background-color: var(--neutral-3);
+  /* Alternate row colors */
+}
 
-  .grid-row:hover {
-    background-color: var(--neutral-5); /* Highlight row on hover */
-  }
+.grid-row:hover {
+  background-color: var(--neutral-5);
+  /* Highlight row on hover */
+}
 
-  /* Highlight the selected row */
-  .selected-row {
-    background-color: var(--primary-15) !important; /* for selected row */
-  }
+/* Highlight the selected row */
+.selected-row {
+  background-color: var(--primary-15) !important;
+  /* for selected row */
+}
 
-  .grid-footer {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
+.grid-footer {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.grid-row .no-data {
+  color: var(--neutral-60);
+  font-size: var(--md);
+  padding: 0 1rem;
+}
+
+.grid-footer {
+  border-top: 1px solid var(--neutral-15);
+  color: var(--neutral-60);
+  font-size: var(--md);
+  padding: 0 1rem;
+  height: 53px;
+  background-color: var(--neutral-5);
+}
+
+/* Custom scrollbar for modern browsers */
+.grid-body {
+  flex: 1;
+  /* Allow the body to grow and fill available space */
+  overflow-y: auto;
+  /* Enable scrolling if content exceeds available height */
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+  max-height: var(--grid-height);
+  /* Dynamically set grid height */
+
+  /* Scrollbar customization */
+  scrollbar-width: thin;
+  /* For Firefox */
+  scrollbar-color: var(--neutral-20) var(--neutral-5);
+  /* For Firefox */
+}
+
+/* For WebKit browsers (Chrome, Edge, Safari) */
+.grid-body::-webkit-scrollbar {
+  width: 8px;
+  /* Width of the vertical scrollbar */
+  height: 8px;
+  /* Height of the horizontal scrollbar */
+}
+
+.grid-body::-webkit-scrollbar-track {
+  background: var(--neutral-5);
+  /* Background of the scrollbar track */
+  border-radius: 5px;
+  /* Rounded edges */
+}
+
+.grid-body::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-20);
+  /* Color of the scrollbar thumb */
+  border-radius: 5px;
+  /* Rounded edges */
+  border: 2px solid var(--neutral-5);
+  /* Adds padding around the thumb */
+}
+
+/* Add hover effect for the scrollbar */
+.grid-body::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neutral-15);
+  /* Darker color on hover */
+}

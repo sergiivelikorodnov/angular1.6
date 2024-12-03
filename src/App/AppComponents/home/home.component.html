@@ -7,7 +7,7 @@
   >
   </grid-component>
   <dialog-component
-    title="User Details"
+    title="{{'userDetails'| translate}}"
     width="550px"
     on-close="ctrl.handleDialogClose()"
     ng-if="ctrl.showDialog"
@@ -21,24 +21,18 @@
       </div>
     </div>
     <div class="user-details">
-      <p><span>{{'phone' | translate}}: </span>{{ ctrl.currentUser.phone }}</p>
+      <div>
+        <p><span>{{'phone' | translate}}: </span>{{ ctrl.currentUser.phone }}</p>
+        <p>
+          <span>{{'website' | translate}}: </span>
+          <a ng-href="http://{{ ctrl.currentUser.website }}" target="_blank">{{ ctrl.currentUser.website }}</a>
+        </p>
+      </div>
       <p>
         <span>{{'email' | translate}}: </span>
         <a ng-href="mailto:{{ ctrl.currentUser.email }}">{{ ctrl.currentUser.email }}</a>
       </p>
-      <p>
-        <span>{{'website' | translate}}: </span>
-        <a ng-href="http://{{ ctrl.currentUser.website }}" target="_blank">{{ ctrl.currentUser.website }}</a>
-      </p>
     </div>
-    <button ng-click="ctrl.deleteUser()" class="button button-big button-big-white" style="align-self: self-end;"><i class="fa-regular fa-trash-can"></i>Delete</button>
+    <button ng-click="ctrl.deleteUser()" class="button button-big button-big-white" style="align-self: self-end;"><i class="fa-regular fa-trash-can"></i>{{'delete' | translate}}</button>
   </dialog-component>
-  <message-component
-    ng-if="ctrl.deleteDialogVisible"
-    mode="delete"
-    title="Delete Item"
-    text="This action cannot be undone. Do you want to delete this item?"
-    on-confirm="ctrl.handleDelete()"
-    on-close="ctrl.handleClose()"
-></message-component>
 </div>

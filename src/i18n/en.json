@@ -4,5 +4,16 @@
     "username": "Username",
     "email": "Email",
     "phone": "Phone",
-    "website": "Website"
+    "website": "Website",
+    "loading": "Loading...",
+    "userDetails": "User details",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "ok": "Ok",
+    "yes": "Yes",
+    "no": "No",
+    "shown": "Shown:",
+    "deleteUserTitle": "Are you sure you want to delete user?",
+    "deleteUserText": "This action cannot be undone. Your user will be permanently deleted",
+    "noData": "No data found"
   }

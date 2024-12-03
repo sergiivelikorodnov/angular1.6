@@ -24,6 +24,10 @@
       href="Core/CoreServices/message-service/message.service.css"
       rel="stylesheet"
     />
+    <link
+      href="Core/CoreServices/loading-service/loading.service.css"
+      rel="stylesheet"
+    />
     <!-- <link href="Core/message/message.component.css" rel="stylesheet" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,6 +59,7 @@
         </div>
       </div>
       <message-component></message-component>
+      <loading-component></loading-component>
       <div ng-include="'App/AppComponents/home/home.component.html'"></div>
     </div>
 
@@ -68,6 +73,7 @@
     <script src="app.js"></script>
     <script src="App/Services/userService/user.service.js"></script>
     <script src="Core/CoreServices/message-service/message.service.js"></script>
+    <script src="Core/CoreServices/loading-service/loading.service.js"></script>
     <script src="App/app.constants.js"></script>
     <script src="App/AppComponents/home/home.component.js"></script>
     <script src="Core/CoreComponents/grid/grid.component.js"></script>
